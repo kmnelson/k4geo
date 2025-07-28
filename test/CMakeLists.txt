@@ -167,9 +167,13 @@ if(DCH_INFO_H_EXIST)
 endif()
 #--------------------------------------------------
 # test for ALLEGRO o2 v01
+#
+# THIS SHOULD NOT BE MERGED
+# THIS IS A TEST OF GITHUB ACTIONS
+#
 SET( test_name "test_ALLEGRO_o2_v01" )
 ADD_TEST( t_${test_name} "${CMAKE_INSTALL_PREFIX}/bin/run_test_${PackageName}.sh"
-  ddsim --compactFile=${CMAKE_CURRENT_SOURCE_DIR}/../FCCee/ALLEGRO/compact/ALLEGRO_o2_v01/ALLEGRO_o2_v01.xml --runType=batch -G -N=50000 --gun.distribution uniform --gun.particle geantino --outputFile=testALLEGRO_o2_v01.root )
+  ddsim --compactFile=${CMAKE_CURRENT_SOURCE_DIR}/../FCCee/ALLEGRO/compact/ALLEGRO_o1_v03/ALLEGRO_o1_v03.xml --runType=batch -G -N=50000 --gun.distribution uniform --gun.particle geantino --outputFile=testALLEGRO_o1_v03.root )
 SET_TESTS_PROPERTIES( t_${test_name} PROPERTIES FAIL_REGULAR_EXPRESSION  "Exception;EXCEPTION;ERROR;Error" )
 
 #--------------------------------------------------
